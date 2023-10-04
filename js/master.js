@@ -14,7 +14,7 @@ let agePrompt =  prompt ('Quanti anni hai?');
 let age = parseInt(agePrompt);
 console.log(age);
 
-// -Impostare la variabile con il multiplier del prezzo per km (0,21km all'euro)
+// -Impostare la variabile con il multiplier del prezzo per km (0.21km all'euro)
 let multiplier = 0.21;
 
 console.log(multiplier);
@@ -30,30 +30,28 @@ console.log(sconto20);
 let sconto65 = 65;
 console.log(sconto65);
 
-let scontoMinorenni
-let scontoSenior
+// -Dichiaro senza impostare:
+let scontoMinorenni;
+let scontoSenior;
+let prezzoScontato;
 
 // -SE age < 18
-//     -ALLORA sconto = sconto20%
-//     <!-- document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`; -->
-if (age < parseInt(18)) {
-    scontoMinorenni = prezzoPieno * (sconto20 / 100)
-    // -Imposto variabile prezzo scontato
-    let prezzoScontato = prezzoPieno - scontoMinorenni;
-    console.log(prezzoScontato);
-    document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`;
+    // -calcolo lo sconto Minorenni
+    // -calcolo il prezzo scontato
+if (age < 18) {
+    scontoMinorenni = prezzoPieno * (sconto20 / 100);
+    prezzoScontato = prezzoPieno - scontoMinorenni;
     // -ELSE IF age > 65 
-//     -ALLORA sconto = sconto65%
-//       <!-- document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`; -->
-} else if (age > parseInt(65)) {
+    // -calcolo lo sconto senior
+    // -calcolo il prezzo scontato
+} else if (age > 65) {
     scontoSenior = prezzoPieno * (sconto65 / 100);
-    let prezzoScontato = prezzoPieno - scontoSenior;
-    document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`;
+    prezzoScontato = prezzoPieno - scontoSenior;
     // -ALTRIMENTI
-//     -sconto = 0%
-//       <!-- document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`; -->
+    // -il prezzo scontato e' equivalente al prezzo pieno
 } else {
-    let prezzoScontato = prezzoPieno;
-    document.getElementById('prezzo-finale').innerHTML = `${prezzoScontato}`;
+    prezzoScontato = prezzoPieno;
 }
 
+const prezzoScontatoFixed = prezzoScontato.toFixed(2);
+document.getElementById('prezzo-finale').innerHTML = `${prezzoScontatoFixed}`;
