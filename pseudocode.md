@@ -27,3 +27,7 @@
 
 -ELSE
     -il prezzo scontato e' equivalente al prezzo pieno
+
+-Displayo solo 2 cifre decimali
+
+-Stampo all' utente il prezzo da pagare
