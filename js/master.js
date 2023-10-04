@@ -53,5 +53,7 @@ if (age < 18) {
     prezzoScontato = prezzoPieno;
 }
 
+// -Displayo solo 2 cifre decimali
 const prezzoScontatoFixed = prezzoScontato.toFixed(2);
+// -Stampo all' utente il prezzo da pagare
 document.getElementById('prezzo-finale').innerHTML = `${prezzoScontatoFixed}`;
