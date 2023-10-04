@@ -5,6 +5,7 @@
 let kmToDoPrompt = prompt ('Quanti km devi percorrere?');
 let kmToDo = parseInt(kmToDoPrompt);
 console.log(kmToDo);
+console.log(typeof kmtoDo)
 
 // -Impostare la variabile con l'eta' del soggetto
 let agePrompt =  prompt ('Quanti anni hai?');
